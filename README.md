@@ -1,4 +1,4 @@
-# 📝 Examination Module
+#  Examination Module
 
 A full-stack web application for managing and conducting online exams, built with **Node.js (Express)**, **MySQL (Sequelize ORM)**, and **React**.
 
@@ -16,13 +16,13 @@ A full-stack web application for managing and conducting online exams, built wit
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 exam-module/
 ├── backend/
 │   ├── config/
-│   │   └── database.js          # Sequelize MySQL connection
+│   │   └── database.js          
 │   ├── controllers/
 │   │   ├── authController.js    # Register, Login, GetMe
 │   │   ├── examController.js    # Exam CRUD
@@ -48,11 +48,11 @@ exam-module/
     │   └── index.html
     ├── src/
     │   ├── context/
-    │   │   └── AuthContext.js   # Global auth state
+    │   │   └── AuthContext.js  
     │   ├── pages/
     │   │   ├── AuthPage.js      # Login / Register
     │   │   ├── StudentDashboard.js
-    │   │   ├── TakeExam.js      # Exam with timer
+    │   │   ├── TakeExam.js     
     │   │   ├── AdminDashboard.js
     │   │   ├── CreateExam.js
     │   │   └── ManageQuestions.js
@@ -65,7 +65,7 @@ exam-module/
 
 ---
 
-## ⚙️ Setup & Run
+##  Setup & Run
 
 ### Prerequisites
 - Node.js v16+
@@ -73,7 +73,7 @@ exam-module/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/exam-module.git
+git clone https://github.com/RohithGorla/Exam-Module.git
 cd exam-module
 ```
 
@@ -104,7 +104,7 @@ API runs at: **http://localhost:5000**
 
 ---
 
-## 🔐 Authentication
+##  Authentication
 
 JWT-based authentication. Include the token in every protected request:
 ```
@@ -153,7 +153,7 @@ Two roles:
 
 ---
 
-## ✨ Features
+##  Features
 
 - ✅ JWT Authentication with role-based access (Admin / Student)
 - ✅ Full CRUD for Exams and Questions
