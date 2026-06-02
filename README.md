@@ -1,6 +1,16 @@
-#  Examination Module
+# 📝 Examination Module
 
-A full-stack web application for managing and conducting online exams, built with **Node.js (Express)**, **MySQL (Sequelize ORM)**, and **React**.
+A full-stack web application for managing and conducting online exams, built with **Node.js (Express)**, **PostgreSQL (Sequelize ORM)**, and **React**.
+
+## 🔗 Live Demo
+
+| | Link |
+|---|---|
+| 🌐 **Live App** | [https://exam-module-five.vercel.app](https://exam-module-five.vercel.app) |
+| ⚙️ **Backend API** | [https://exam-module-backend.onrender.com](https://exam-module-backend.onrender.com) |
+| 💻 **GitHub** | [https://github.com/RohithGorla/Exam-Module](https://github.com/RohithGorla/Exam-Module) |
+
+> ⚠️ Backend is hosted on Render free tier — first request may take 30–50 seconds to wake up.
 
 ---
 
@@ -9,14 +19,29 @@ A full-stack web application for managing and conducting online exams, built wit
 | Layer      | Technology                          |
 |------------|-------------------------------------|
 | Backend    | Node.js, Express.js                 |
-| Database   | MySQL + Sequelize ORM               |
+| Database   | PostgreSQL + Sequelize ORM          |
 | Frontend   | React, React Router v6, Axios       |
 | Auth       | JWT (JSON Web Tokens) + bcryptjs    |
 | Validation | express-validator                   |
+| Deployment | Vercel (Frontend) + Render (Backend)|
 
 ---
 
-##  Project Structure
+## ✨ Features
+
+- ✅ JWT Authentication with role-based access (Admin / Student)
+- ✅ Full CRUD for Exams and Questions
+- ✅ **Auto score calculation** on exam submission
+- ✅ Countdown timer with auto-submit
+- ✅ Pass/Fail determination based on passing marks
+- ✅ Admin analytics dashboard (total exams, students, pass rate)
+- ✅ Input validation on all API endpoints
+- ✅ Duplicate submission prevention
+- ✅ Clean, responsive React UI
+
+---
+
+## 📁 Project Structure
 
 ```
 exam-module/
@@ -50,31 +75,31 @@ exam-module/
     │   ├── context/
     │   │   └── AuthContext.js  
     │   ├── pages/
-    │   │   ├── AuthPage.js      # Login / Register
+    │   │   ├── AuthPage.js         # Login / Register
     │   │   ├── StudentDashboard.js
     │   │   ├── TakeExam.js     
     │   │   ├── AdminDashboard.js
     │   │   ├── CreateExam.js
     │   │   └── ManageQuestions.js
     │   ├── services/
-    │   │   └── api.js           # Axios API calls
-    │   ├── App.js               # Routes + Protected routes
+    │   │   └── api.js              # Axios API calls
+    │   ├── App.js                  # Routes + Protected routes
     │   └── index.js
     └── package.json
 ```
 
 ---
 
-##  Setup & Run
+## ⚙️ Setup & Run Locally
 
 ### Prerequisites
 - Node.js v16+
-- MySQL running locally
+- PostgreSQL running locally
 
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/RohithGorla/Exam-Module.git
-cd exam-module
+cd Exam-Module
 ```
 
 ### 2. Backend Setup
@@ -82,17 +107,11 @@ cd exam-module
 cd backend
 npm install
 cp .env.example .env
-# Edit .env with your MySQL credentials
+# Edit .env with your database credentials
 npm run dev
 ```
 
-### 3. Create MySQL Database
-```sql
-CREATE DATABASE exam_module;
-```
-> Tables are auto-created by Sequelize on first run (`sync: alter`).
-
-### 4. Frontend Setup
+### 3. Frontend Setup
 ```bash
 cd frontend
 npm install
@@ -104,9 +123,9 @@ API runs at: **http://localhost:5000**
 
 ---
 
-##  Authentication
+## 🔐 Authentication
 
-JWT-based authentication. Include the token in every protected request:
+JWT-based authentication. Include token in every protected request:
 ```
 Authorization: Bearer <token>
 ```
@@ -144,26 +163,12 @@ Two roles:
 | DELETE | /api/questions/:id                | Admin  | Delete question    |
 
 ### Results
-| Method | Endpoint                    | Access  | Description             |
-|--------|-----------------------------|---------|-------------------------|
+| Method | Endpoint                    | Access  | Description              |
+|--------|-----------------------------|---------|--------------------------|
 | POST   | /api/exams/:examId/submit   | Student | Submit exam (auto-score) |
-| GET    | /api/results/my             | Student | Own results             |
-| GET    | /api/results                | Admin   | All results             |
-| GET    | /api/results/analytics      | Admin   | Analytics dashboard     |
-
----
-
-##  Features
-
-- ✅ JWT Authentication with role-based access (Admin / Student)
-- ✅ Full CRUD for Exams and Questions
-- ✅ **Auto score calculation** on exam submission
-- ✅ Countdown timer with auto-submit
-- ✅ Pass/Fail determination based on passing marks
-- ✅ Admin analytics dashboard (total exams, students, pass rate)
-- ✅ Input validation on all API endpoints
-- ✅ Duplicate submission prevention
-- ✅ Clean, responsive React UI
+| GET    | /api/results/my             | Student | Own results              |
+| GET    | /api/results                | Admin   | All results              |
+| GET    | /api/results/analytics      | Admin   | Analytics dashboard      |
 
 ---
 
